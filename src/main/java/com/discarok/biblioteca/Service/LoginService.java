@@ -1,8 +1,7 @@
 package com.discarok.biblioteca.Service;
 
 
-import org.springframework.stereotype.Component;
-
+import org.springframework.stereotype.Service;
 
 /**
  * @author discarok
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 
 // Volvemos componente nuestra clase para poder aplicar inyección de dependencias
-@Component
+@Service
 public class LoginService {
 
     /**
