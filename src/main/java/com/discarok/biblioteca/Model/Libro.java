@@ -1,7 +1,10 @@
 package com.discarok.biblioteca.Model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Date;
 import java.util.Objects;
+
 
 /**
  * @author discarok
@@ -11,12 +14,18 @@ import java.util.Objects;
 
 public class Libro {
 
+    @Min(value=1, message = "No puede tener numeros negativos")
+    @Max(value = 1000, message = "El número excede el stock disponible")
     private int codigo;
+
     private String nombre;
     private Date fechaIngreso;
     private String lenguaje;
     private boolean disponible;
 
+    public Libro(){
+        super();
+    }
 
     public Libro(int codigo, String nombre, Date fechaIngreso, String lenguaje, boolean disponible) {
         this.codigo = codigo;

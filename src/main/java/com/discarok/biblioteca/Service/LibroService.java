@@ -23,8 +23,9 @@ public class LibroService {
             new Libro(3,"La hojarasca",new Date(1955,5,12),"ES",true)
     ));
 
-    public void addLibro(int codigo, String nombre, Date fecha, String lenguaje){
-         libros.add(new Libro(codigo,nombre,fecha,lenguaje,true));
+    public void addLibro(Libro libro){
+
+         libros.add(libro);
     }
 
     public void deleteLibro(int codigo){
