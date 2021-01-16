@@ -56,4 +56,20 @@ public class LibroController {
         return "redirect:/administrar-libros";
     }
 
+    @RequestMapping(value = "/editar-libro", method = RequestMethod.GET)
+    public String showUpdateLibroPage(ModelMap model, @RequestParam int codigo){
+        Libro libro = libroService.getLibro(codigo);
+        model.put("libro",libro);
+        return "libro/crear_libro";
+    }
+
+    @RequestMapping(value = "/editar-libro", method = RequestMethod.POST)
+    public String updateLibro(@Valid Libro libro, BindingResult result ){
+        if(result.hasErrors()){
+            return "libro/crear_libro";
+        }
+        libroService.updateLibro(libro);
+        return "redirect:/administrar-libros";
+    }
+
 }

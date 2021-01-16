@@ -46,6 +46,11 @@ public class LibroService {
         ).findFirst().get();
     }
 
+    public void updateLibro(Libro libro){
+        libros.remove(libro);
+        libros.add(libro);
+    }
+
     public Date castingDate(String fecha){
         String aux [] = fecha.split("-");
         int anio = Integer.parseInt(aux[0]);

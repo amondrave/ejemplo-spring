@@ -85,7 +85,7 @@ public class Libro {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Libro libro = (Libro) o;
-        return codigo == libro.codigo && disponible == libro.disponible && Objects.equals(nombre, libro.nombre) && Objects.equals(fechaIngreso, libro.fechaIngreso) && Objects.equals(lenguaje, libro.lenguaje);
+        return codigo == libro.codigo;
     }
 
     @Override
